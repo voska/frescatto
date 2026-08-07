@@ -2,7 +2,7 @@ module github.com/voska/frescatto
 
 go 1.25.0
 
-require github.com/voska/vtexkit v0.3.1
+require github.com/voska/vtexkit v0.4.0
 
 require (
 	github.com/alecthomas/kong v1.16.0 // indirect

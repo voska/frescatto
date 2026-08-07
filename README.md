@@ -37,6 +37,7 @@ Then the whole flow is five commands:
 
 ```sh
 frescatto fav                            # your wishlist from the website
+frescatto fav add 67                     # save a product to it
 frescatto search salmao --limit 5        # find a SKU
 frescatto cart add 42 --qty 2            # seller is looked up for you
 frescatto delivery windows               # pick a window number

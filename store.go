@@ -25,9 +25,14 @@ var Store = store.Store{
 	DisplayName: "Frescatto",
 	BaseURL:     "https://www.frescatto.com",
 
-	// Persisted-query hash for vtex.wish-list's ViewLists operation, which
-	// backs the heart icons and /account/#/wishlist. Tied to the installed
-	// app version (1.19.1 as of 2026-08-07); if `frescatto fav` starts
-	// reporting a rejected request, re-capture it from a browser session.
-	WishlistHash: "16643ee1547d54d81f6c73462be5d18b16297b00c2c100a94f62bc83fe3e1aea",
+	// Persisted-query hashes for vtex.wish-list, which backs the heart
+	// icons and /account/#/wishlist. There is no hash-free way to reach
+	// that API. These are tied to the installed app version (1.19.1 as of
+	// 2026-08-07); if `frescatto fav` starts reporting a rejected request,
+	// re-capture them from a live browser session.
+	Wishlist: store.WishlistHashes{
+		View:   "16643ee1547d54d81f6c73462be5d18b16297b00c2c100a94f62bc83fe3e1aea",
+		Add:    "0fd032b3e26dc0223a8dbfcf8629e27aa9deaa2fe064dcc8eef36a8ac70af3ee",
+		Remove: "7690d9e181e5eeafc21c5d5e5cde3f2322bac1d23ad9ab9321f33bfe071a8705",
+	},
 }

@@ -49,16 +49,18 @@ frescatto cart clear
 **Payment** defaults to pix. `frescatto checkout payments` lists what the store
 accepts and any card saved on the account. For a card, add `--cvv 123`.
 
-**Favorites** show the store's own wishlist — what the heart icons on the
-website saved. Read-only. Use it to find a SKU, then add that one item.
+**Favorites** are the store's own wishlist — the same list the heart icons on
+the website use. Changes here show up on the website.
 
 ```bash
 frescatto fav                   # show the wishlist
-frescatto cart add 42           # add one of them
+frescatto fav add 67            # save a product
+frescatto fav remove 67         # unsave it
+frescatto cart add 42           # buy one of them
 ```
 
 Never add every favorite to the cart. A wishlist is things the user likes,
-not things they want to buy today.
+not things they want to buy today. There is no bulk-order command for it.
 
 **Lists** are curated SKU groups stored locally, and these *are* meant to be
 ordered wholesale:
