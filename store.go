@@ -24,4 +24,10 @@ var Store = store.Store{
 	Name:        "frescatto",
 	DisplayName: "Frescatto",
 	BaseURL:     "https://www.frescatto.com",
+
+	// Persisted-query hash for vtex.wish-list's ViewLists operation, which
+	// backs the heart icons and /account/#/wishlist. Tied to the installed
+	// app version (1.19.1 as of 2026-08-07); if `frescatto fav` starts
+	// reporting a rejected request, re-capture it from a browser session.
+	WishlistHash: "16643ee1547d54d81f6c73462be5d18b16297b00c2c100a94f62bc83fe3e1aea",
 }

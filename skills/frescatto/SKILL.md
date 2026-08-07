@@ -49,12 +49,20 @@ frescatto cart clear
 **Payment** defaults to pix. `frescatto checkout payments` lists what the store
 accepts and any card saved on the account. For a card, add `--cvv 123`.
 
-**Lists** are saved SKU groups, stored locally:
+**Favorites** are the store's own wishlist — the same items the heart icons
+on the website save:
+
+```bash
+frescatto fav                   # show the wishlist
+frescatto fav order             # add every favorite to the cart
+frescatto fav order --dry-run   # see what that would add
+```
+
+**Lists** are your own SKU groups, stored locally on this machine:
 
 ```bash
 frescatto list add weekly 42
 frescatto list order weekly     # add every SKU in the list to the cart
-frescatto fav add 42            # shorthand for the list named "favorites"
 ```
 
 ## Output for scripts and agents
