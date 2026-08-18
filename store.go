@@ -14,8 +14,12 @@ import "github.com/voska/vtexkit/store"
 // No MinOrder: storePreferencesData.minimumOrderValue is null and the site
 // advertises free shipping above R$400, which is not a minimum order.
 //
-// No Quirks: there is no evidence Frescatto's gateway requires ClearSale
-// fingerprinting, unlike Zona Sul's.
+// GatewayCallback: a saved-card payment does not settle here without the
+// checkout gatewayCallback poll. Order 1654880526893 was placed without it
+// on 2026-08-18, sat with no tid and no authorizedDate, and was cancelled
+// by the gateway five minutes later; the replacement order placed with the
+// poll settled. No ClearSaleFingerprint: unlike Zona Sul's, this gateway
+// shows no sign of requiring one.
 //
 // Search is left at the default SearchAuto, which uses Intelligent Search
 // REST and falls back to the catalog API. Both were verified working
@@ -24,6 +28,7 @@ var Store = store.Store{
 	Name:        "frescatto",
 	DisplayName: "Frescatto",
 	BaseURL:     "https://www.frescatto.com",
+	Quirks:      store.GatewayCallback,
 
 	// Persisted-query hashes for vtex.wish-list, which backs the heart
 	// icons and /account/#/wishlist. There is no hash-free way to reach

@@ -23,7 +23,7 @@ exit codes — is in vtexkit. Change behavior there, not here.
 - Auth: classic password and emailed access code, both enabled. Discovered at runtime.
 - Search: Intelligent Search REST with catalog REST fallback. No persisted GraphQL hash.
 - Seller, payment systems, and delivery SLAs are all discovered, never hardcoded.
-- No minimum order. No ClearSale quirk.
+- No minimum order. No ClearSale quirk. Card payments need the `GatewayCallback` quirk to settle.
 - Secrets: macOS Keychain service `frescatto-cli`. Config: `~/.config/frescatto/`.
 
 ## Output Modes
