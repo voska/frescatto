@@ -37,6 +37,10 @@ approval.** `--confirm` spends real money.
 
 **Search** takes Portuguese terms. The first column of the output is the SKU.
 
+Every result carries both `sku` and `productId`. Commands take the `sku` —
+the two are separate sequences and the same number routinely appears in
+both, naming two unrelated products.
+
 **Cart** never needs a `--seller`; it is looked up automatically.
 
 ```bash
